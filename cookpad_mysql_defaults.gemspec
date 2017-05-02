@@ -1,15 +1,15 @@
 $:.push File.expand_path("../lib", __FILE__)
 
 # Maintain your gem's version:
-require "cookpad_global_mysql_defaults/version"
+require "cookpad_mysql_defaults/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "cookpad_global_mysql_defaults"
-  s.version     = CookpadGlobalMysqlDefaults::VERSION
+  s.name        = "cookpad_mysql_defaults"
+  s.version     = CookpadMysqlDefaults::VERSION
   s.authors     = ["David Stosik", "Cookpad"]
   s.email       = ["david.stosik+git-noreply@gmail.com"]
-  s.homepage    = "https://github.com/davidstosik/cookpad-global-mysql-defaults"
+  s.homepage    = "https://github.com/cookpad/cookpad-mysql-defaults"
   s.summary     = %q{Cookpad Global's MySQL defaults}
   s.description = %q{A gem that forces better MySQL table defaults to support Emojis and indexes on wider columns.}
   s.license     = "MIT"

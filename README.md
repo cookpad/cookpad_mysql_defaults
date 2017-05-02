@@ -1,4 +1,4 @@
-# CookpadGlobalMysqlDefaults
+# CookpadMysqlDefaults
 
 This gem forces better MySQL table defaults on creation.
 
@@ -15,7 +15,7 @@ Just add the gem to your project!
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'cookpad_global_mysql_defaults'
+gem 'cookpad_mysql_defaults', github: 'cookpad/cookpad_mysql_defaults'
 ```
 
 And then execute:
