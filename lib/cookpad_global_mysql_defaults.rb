@@ -1,0 +1,4 @@
+require "cookpad_global_mysql_defaults/mysql_table_default_options"
+
+module CookpadGlobalMysqlDefaults
+end
