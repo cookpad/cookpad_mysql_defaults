@@ -1,6 +1,5 @@
 module MysqlTableDefaultOptions
   def create_table(table_name, options = {}, &block)
-      binding.pry
     options = options.dup
     options[:options] ||= {}
 
