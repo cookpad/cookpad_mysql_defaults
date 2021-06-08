@@ -1,4 +1,6 @@
 require "cookpad_mysql_defaults/mysql_table_default_options"
+require "cookpad_mysql_defaults/table_definition"
+require "cookpad_mysql_defaults/schema_statements"
 
 module CookpadMysqlDefaults
 end
