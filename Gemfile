@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
 # Declare your gem's dependencies in cookpad_mysql_defaults.gemspec.
 # Bundler will treat runtime dependencies like base dependencies, and

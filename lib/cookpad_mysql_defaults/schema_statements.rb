@@ -10,15 +10,16 @@ module CookpadMysqlDefaults
 
     def create_table(table_name, **options)
       if block_given?
-        super { |t| yield compatible_table_definition(t) }
+        super { |table_definition| yield compatible_table_definition(table_definition) }
       else
         super
       end
     end
 
     private
-      def compatible_table_definition(t)
-        class << t
+
+      def compatible_table_definition(table_definition)
+        class << table_definition
           prepend TableDefinition
         end
         t
