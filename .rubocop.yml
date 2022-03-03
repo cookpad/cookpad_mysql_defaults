@@ -1,0 +1,7 @@
+inherit_from:
+  - https://raw.githubusercontent.com/cookpad/global-style-guides/main/.rubocop.ruby.yml
+
+AllCops:
+  NewCops: enable
+  SuggestExtensions: false
+  TargetRubyVersion: 2.7
