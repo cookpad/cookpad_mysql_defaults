@@ -17,7 +17,7 @@ module CookpadMysqlDefaults
         end.join(" ")
       end
 
-      super(table_name, options, &block)
+      super(table_name, **options, &block)
     end
   end
 end
