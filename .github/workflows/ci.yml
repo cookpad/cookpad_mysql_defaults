@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        ruby:
+          - '2.7'
+          - '3.0'
+          - '3.1'
+          - 'head'
+    name: Run test with Ruby ${{ matrix.ruby }}
+    services:
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_ROOT_PASSWORD: mysql_defaults_root
+          MYSQL_USER: mysql_defaults
+          MYSQL_PASSWORD: mysql_defaults
+          MYSQL_DATABASE: mysql_defaults
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd "mysqladmin ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    env:
+      RAILS_ENV: test
+      DATABASE_URL: mysql2://mysql_defaults:mysql_defaults@127.0.0.1:3306/mysql_defaults
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby }}
+          bundler-cache: true
+      - run: ruby ./test.rb
