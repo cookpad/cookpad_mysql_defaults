@@ -21,19 +21,18 @@ jobs:
         image: mysql:5.7
         env:
           MYSQL_ROOT_PASSWORD: secret
-          MYSQL_USER: root
           MYSQL_PASSWORD: secret
-          MYSQL_DATABASE: mysql_defaults
+          MYSQL_DATABASE: testdb
         ports:
           - 3306:3306
         options: >-
           --health-cmd "mysqladmin ping"
           --health-interval 10s
           --health-timeout 5s
-          --health-retries 5
+          --health-retries 10
     env:
       RAILS_ENV: test
-      DATABASE_URL: mysql2://root:@127.0.0.1:3306/mysql_defaults
+      DATABASE_URL: mysql2://root:secret@127.0.0.1:3306/testdb
     steps:
       - uses: actions/checkout@v2
       - uses: ruby/setup-ruby@v1
