@@ -23,6 +23,12 @@ And then execute:
 $ bundle
 ```
 
+## Test
+
+Run `docker-compose up -d` to create and run the MySQL database.
+
+Then run `ruby test/defaults_test.rb`
+
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).

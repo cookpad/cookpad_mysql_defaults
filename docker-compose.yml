@@ -1,0 +1,23 @@
+version: "3.7"
+
+services:
+  context:
+    build: .
+  mysql:
+    image: mysql:5.7
+    restart: always
+    platform: linux/x86_64
+    volumes:
+      - testdb:/var/lib/mysql
+    ports:
+      - "8000:3306"
+    expose:
+      - 3306
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_DATABASE: testdb
+      MYSQL_PASSWORD: secret
+      MYSQL_ROOT_PASSWORD: secret
+    command: --character-set-server=utf8mb4 --innodb_file_per_table --innodb_large_prefix --innodb_file_format=barracuda
+volumes:
+  testdb:
